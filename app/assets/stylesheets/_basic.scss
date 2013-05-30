@@ -1,0 +1,40 @@
+body{
+  padding-top:20px;
+}
+
+.memeHolder{
+  position:relative;
+  width:300px;
+  height:300px;
+  margin:0 auto;
+  border:1px solid red;
+}
+
+.memeText{
+  position:absolute;
+  width:300px;
+  display:block;
+  text-align:center;
+  color:#fff;
+  font-family: Impact;
+  font-size:40px;    
+  text-shadow:-2px 2px 0px #000, 2px -2px 0px #000, 2px 2px 0px #000, -2px -2px 0px #000;
+  z-index:10;
+}
+
+.memeTextTop{
+  top:15px;
+  left:0;
+}
+
+.memeTextBottom{
+  bottom:15px;
+  left:0;
+}
+
+.memeHolder iframe{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:0;
+}
