@@ -7,41 +7,74 @@ body{
   max-width:960px;
 }
 
-
-
-.memeHolder{
-  position:relative;
-  width:300px;
-  height:300px;
-  margin:20px auto;
-  border:1px solid #11a9cc;
-}
-
-.memeText{
-  position:absolute;
-  width:300px;
-  display:block;
+.counter{
+  width:30px;
+  display:inline-block;
   text-align:center;
-  color:#fff;
-  font-family: Impact;
-  font-size:40px;    
-  text-shadow:-2px 2px 0px #000, 2px -2px 0px #000, 2px 2px 0px #000, -2px -2px 0px #000;
-  z-index:10;
+  position: relative;
+  cursor: default;
+
+  .up{
+    position: absolute;
+    top:-15px;
+    left:0;
+    height:15px;
+    width:30px;
+    text-align: center;
+    cursor:pointer;
+  }
+
+  .down{
+    position: absolute;
+    bottom:-15px;
+    left:0;
+    height:15px;
+    width:30px;
+    text-align: center;
+    cursor:pointer;
+  }
 }
 
-.memeTextTop{
-  top:15px;
-  left:0;
+.toggle{
+  display:inline-block;
+  text-align:center;
+  position: relative;
+  cursor: default;
+
+  .on{
+    position: absolute;
+    top:-15px;
+    left:0;
+    height:15px;
+    width:100%;
+    text-align: center;
+    cursor:pointer;
+  }
+
+  .off{
+    position: absolute;
+    bottom:-15px;
+    left:0;
+    height:15px;
+    width:100%;
+    text-align: center;
+    cursor:pointer;
+  }
 }
 
-.memeTextBottom{
-  bottom:15px;
-  left:0;
-}
 
-.memeHolder iframe{
-  position:absolute;
-  top:0;
-  left:0;
-  z-index:0;
+.icon-blue,
+.nav-pills > .active > a > [class^="icon-"],
+.nav-pills > .active > a > [class*=" icon-"],
+.nav-list > .active > a > [class^="icon-"],
+.nav-list > .active > a > [class*=" icon-"],
+.navbar-inverse .nav > .active > a > [class^="icon-"],
+.navbar-inverse .nav > .active > a > [class*=" icon-"],
+.dropdown-menu > li > a:hover > [class^="icon-"],
+.dropdown-menu > li > a:hover > [class*=" icon-"],
+.dropdown-menu > .active > a > [class^="icon-"],
+.dropdown-menu > .active > a > [class*=" icon-"],
+.dropdown-submenu:hover > a > [class^="icon-"],
+.dropdown-submenu:hover > a > [class*=" icon-"] {
+  background-image: url(/assets/glyphicons-halflings-blue.png);
 }

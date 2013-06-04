@@ -1,6 +1,6 @@
 'use strict'
 
-memeVineAppStates = angular.module('memeVineApp.states', [
+convoAppStates = angular.module('convoApp.states', [
   'ui.compat'
 ])
-memeVineAppStates.states = {}
+convoAppStates.states = {}

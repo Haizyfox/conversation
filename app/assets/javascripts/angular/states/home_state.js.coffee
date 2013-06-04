@@ -1,8 +1,8 @@
 'use strict'
 
-memeVineAppStates = angular.module('memeVineApp.states')
+convoAppStates = angular.module('convoApp.states')
 
-memeVineAppStates.states.home = {
+convoAppStates.states.home = {
   name: 'home',
   url: '/',
   controller: 'HomeController',

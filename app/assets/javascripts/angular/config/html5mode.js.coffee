@@ -1,7 +1,7 @@
 'use strict'
 
-memeVineApp = angular.module('memeVineApp')
+convoApp = angular.module('convoApp')
 
-memeVineApp.config(['$locationProvider', ($locationProvider) ->
+convoApp.config(['$locationProvider', ($locationProvider) ->
   $locationProvider.html5Mode(true)
 ])

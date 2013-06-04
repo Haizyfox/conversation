@@ -1,17 +1,32 @@
 'use strict'
 
-angular.module('memeVineApp').controller('HomeController', [ \
-  '$scope', 'VineMeme', '$location', \
-    ($scope, VineMeme, $location) ->
-      $scope.meme = new VineMeme()
+angular.module('convoApp').controller('HomeController', [ \
+  '$scope', \
+    ($scope) ->
+      $scope.someone = []
 
-      $scope.meme.url = "https://vine.co/v/bQWtXT2wPnz/card"
-      $scope.meme.top = "Ryan Gosling"
-      $scope.meme.bottom = "wont eat his cereal"
+      adj = [
+        'Sad',
+        'Happy',
+        'Confused',
+        'Cranky',
+        'Snobby'
+      ]
 
-      $scope.saveMeme = ->
-        $scope.meme.create().then (meme) ->
-          $location.path('/' + meme.token)
-          
+      noun = [
+        'Walrus',
+        'Parakeet',
+        'Goblin',
+        'Gnu',
+        'Otter'
+      ]
+
+      $scope.randomName = ->
+        dice = Math.floor(Math.random() * 4)
+        first = adj[dice]
+        dice = Math.floor(Math.random() * 4)
+        second = noun[dice]
+        first + ' ' + second
+
       
 ])

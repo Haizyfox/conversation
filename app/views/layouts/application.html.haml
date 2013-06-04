@@ -1,9 +1,26 @@
 !!! 5
-%html(ng-app="memeVineApp")
+%html(ng-app="convoApp")
   %head
     %title MemeVine
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
 %body
+  .container-fluid
+    .row-fluid
+      .span12
+        .navbar.navbar-inverse.navbar-fixed-top
+          .navbar-inner
+            .container
+              %ul.nav
+                %li
+                  %a(href="/")
+                    Conversati.on
+                %li
+                  %a(href="/")
+                    Create
+              %ul.nav.pull-right
+                %li
+                  %a(href="/")
+                    About
   = yield

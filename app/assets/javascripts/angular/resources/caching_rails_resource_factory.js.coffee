@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('memeVineApp').factory('cachingRailsResourceFactory',
+angular.module('convoApp').factory('cachingRailsResourceFactory',
   ['$q', 'railsResourceFactory', 'railsFieldRenamingInterceptor', ($q, railsResourceFactory, railsFieldRenamingInterceptor) ->
     cachingRailsResourceFactory = (config) ->
 
