@@ -11,6 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130530030951) do
+
+  create_table "vine_memes", :force => true do |t|
+    t.string   "token"
+    t.string   "url"
+    t.string   "top"
+    t.string   "bottom"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

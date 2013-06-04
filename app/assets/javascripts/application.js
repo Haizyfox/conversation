@@ -8,4 +8,7 @@
 //= require angular/states
 //= require_tree ./angular/controllers
 //= require_tree ./angular/states
+//= require_tree ./angular/resources
 //= require_tree ./angular/config
+
+//= require angularjs/rails/resource

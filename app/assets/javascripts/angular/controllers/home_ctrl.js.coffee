@@ -1,9 +1,17 @@
 'use strict'
 
-angular.module('memeVine').controller('HomeController', [ \
-  '$scope', \
-    ($scope) ->
-      $scope.vineUrl = "https://vine.co/v/bnrtW52x1uJ/card"
-      $scope.bottomText = "Enter bottom text"
-      $scope.topText = "Enter top text"
+angular.module('memeVineApp').controller('HomeController', [ \
+  '$scope', 'VineMeme', '$location', \
+    ($scope, VineMeme, $location) ->
+      $scope.meme = new VineMeme()
+
+      $scope.meme.url = "https://vine.co/v/bQWtXT2wPnz/card"
+      $scope.meme.top = "Ryan Gosling"
+      $scope.meme.bottom = "wont eat his cereal"
+
+      $scope.saveMeme = ->
+        $scope.meme.create().then (meme) ->
+          $location.path('/' + meme.token)
+          
+      
 ])

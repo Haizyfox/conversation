@@ -1,26 +1,31 @@
-.container
-  .row-fluid
-    .span6.well
-      .memeHolder
-        %span.memeText.memeTextTop
-          {{topText}}
-        %iframe(src="{{vineUrl}}" width="300px" height="300px" frameborder="0")
-        %span.memeText.memeTextBottom
-          {{bottomText}}
-    .span6.well
-      %form.form-horizontal
-        .control-group
-          %label.control-label
-            Vine Url
-          .controls
-            %input(type="text" ng-model="vineUrl")
-        .control-group
-          %label.control-label
-            Top Text:
-          .controls
-            %input(type="text" ng-model="topText")
-        .control-group
-          %label.control-label
-            Bottom Texts
-          .controls
-            %input(type="text" ng-model="bottomText")
+.row-fluid
+  .span12.card
+    .row-fluid
+      .span6
+        %h2 Create your own 
+        %form.form-vertical
+          .control-group
+            %label.control-label
+              Vine Url
+            .controls
+              %input(type="text" ng-model="meme.url")
+          .control-group
+            %label.control-label
+              Top Text
+            .controls
+              %input(type="text" ng-model="meme.top")
+          .control-group
+            %label.control-label
+              Bottom Text
+            .controls
+              %input(type="text" ng-model="meme.bottom")
+          .form-actions
+            %button.btn.btn-primary(ng-click="saveMeme()")
+              Save
+      .span6
+        .memeHolder
+          %span.memeText.memeTextTop
+            {{meme.top}}
+          %iframe(src="{{meme.url}}" width="300px" height="300px" frameborder="0")
+          %span.memeText.memeTextBottom
+            {{meme.bottom}}

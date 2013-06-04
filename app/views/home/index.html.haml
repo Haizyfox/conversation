@@ -1,1 +1,23 @@
-%div(ui-view)
+.container-fluid
+  .row-fluid
+    .span12
+      .navbar.navbar-inverse.navbar-fixed-top
+        .navbar-inner
+          .container
+            %ul.nav
+              %li
+                %a(href="/")
+                  Meme Vine
+              %li
+                %a(href="/")
+                  Create
+              %li
+                %a(href="")
+                  Find
+            %ul.nav.pull-right
+              %li
+                %a(href="/")
+                  About
+.container(ui-view)
+  
+     

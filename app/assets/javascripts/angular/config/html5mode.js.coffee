@@ -1,7 +1,7 @@
 'use strict'
 
-memeVine = angular.module('memeVine')
+memeVineApp = angular.module('memeVineApp')
 
-memeVine.config(['$locationProvider', ($locationProvider) ->
+memeVineApp.config(['$locationProvider', ($locationProvider) ->
   $locationProvider.html5Mode(true)
 ])

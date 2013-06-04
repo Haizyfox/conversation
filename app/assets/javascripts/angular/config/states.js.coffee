@@ -1,16 +1,16 @@
 'use strict'
 
-memeVineStates = angular.module('memeVine.states')
+memeVineAppStates = angular.module('memeVineApp.states')
 
-memeVineStates.constant('STATES', memeVineStates.states)
+memeVineAppStates.constant('STATES', memeVineAppStates.states)
 
-memeVineStates.config(['$stateProvider', ($stateProvider) ->
+memeVineAppStates.config(['$stateProvider', ($stateProvider) ->
   loadStates = (states) ->
     for name, state of states
       $stateProvider.state(state)
       loadStates(state.child_states) if state.child_states?
 
-  loadStates(memeVineStates.states)
+  loadStates(memeVineAppStates.states)
 ]).run([ '$rootScope', '$state', ($rootScope, $state) ->
   $rootScope.state = $state
 ])

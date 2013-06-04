@@ -1,8 +1,9 @@
 'use strict'
 
-memeVine = angular.module('memeVine', [
+memeVineApp = angular.module('memeVineApp', [
   'ng',
   'ngResource',
   'ngSanitize',
-  'memeVine.states',
+  'memeVineApp.states',
+  'rails'
 ])

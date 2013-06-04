@@ -1,0 +1,25 @@
+%h1 Listing vine_memes
+
+%table
+  %tr
+    %th Token
+    %th Url
+    %th Top
+    %th Bottom
+    %th
+    %th
+    %th
+
+  - @vine_memes.each do |vine_meme|
+    %tr
+      %td= vine_meme.token
+      %td= vine_meme.url
+      %td= vine_meme.top
+      %td= vine_meme.bottom
+      %td= link_to 'Show', vine_meme
+      %td= link_to 'Edit', edit_vine_meme_path(vine_meme)
+      %td= link_to 'Destroy', vine_meme, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Vine meme', new_vine_meme_path

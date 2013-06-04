@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Token:
+  = @vine_meme.token
+%p
+  %b Url:
+  = @vine_meme.url
+%p
+  %b Top:
+  = @vine_meme.top
+%p
+  %b Bottom:
+  = @vine_meme.bottom
+
+= link_to 'Edit', edit_vine_meme_path(@vine_meme)
+\|
+= link_to 'Back', vine_memes_path

@@ -35,6 +35,8 @@ gem "validates_email_format_of", require: false
 # URL validation
 gem "validate_url", require: false
 
+# Angular Rails Resource
+gem 'angularjs-rails-resource'
 
 group :assets do
 
@@ -55,6 +57,8 @@ group :assets do
 
   # SASS version of Twitter bootstrap.
   gem 'bootstrap-sass', '~> 2.1.1.0'
+
+  gem "flat-ui-rails"
 
   # underscore.js for the Rails asset pipeline
   gem 'underscore-rails'

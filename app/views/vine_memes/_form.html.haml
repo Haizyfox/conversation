@@ -1,0 +1,22 @@
+= form_for @vine_meme do |f|
+  - if @vine_meme.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@vine_meme.errors.count, "error")} prohibited this vine_meme from being saved:"
+      %ul
+        - @vine_meme.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :token
+    = f.text_field :token
+  .field
+    = f.label :url
+    = f.text_field :url
+  .field
+    = f.label :top
+    = f.text_field :top
+  .field
+    = f.label :bottom
+    = f.text_field :bottom
+  .actions
+    = f.submit 'Save'

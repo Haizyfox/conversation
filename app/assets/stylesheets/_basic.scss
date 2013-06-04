@@ -1,13 +1,20 @@
 body{
-  padding-top:20px;
+  padding-top:60px;
 }
+
+.container{
+  margin:0 auto;
+  max-width:960px;
+}
+
+
 
 .memeHolder{
   position:relative;
   width:300px;
   height:300px;
-  margin:0 auto;
-  border:1px solid red;
+  margin:20px auto;
+  border:1px solid #11a9cc;
 }
 
 .memeText{
