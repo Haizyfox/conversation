@@ -4,11 +4,14 @@ app = angular.module('convoApp')
 
 app.directive 'counter', () ->
   {
-    template: '{{participants}}',
+    scope: {
+      collection: "=counter",
+      increment: "=increment"
+    }
+    template: '{{collection.length}}',
     link: (scope, element, attrs) ->
       min = parseInt attrs.min, 10
       max = parseInt attrs.max, 10
-      scope.participants = min
 
       # Up
       up = angular.element('<div></div>').addClass('up')
@@ -16,10 +19,10 @@ app.directive 'counter', () ->
 
       up.bind 'click', () ->
         down.removeClass('hide')
-        if scope.participants + 1 <= max
+        if scope.collection.length + 1 <= max
           scope.$apply () ->
-            scope.participants++
-            up.addClass('hide') if scope.participants == max
+            scope.collection.push(new scope.increment)
+            up.addClass('hide') if scope.collection.length == max
             
 
       # Down
@@ -28,10 +31,10 @@ app.directive 'counter', () ->
 
       down.bind 'click', () ->
         up.removeClass('hide')
-        if scope.participants - 1 >= min
+        if scope.collection.length - 1 >= min
           scope.$apply () ->
-            scope.participants--
-            down.addClass('hide') if scope.participants == min
+            scope.collection.pop()
+            down.addClass('hide') if scope.collection.length == min
 
 
       angular.element(element).prepend(up)

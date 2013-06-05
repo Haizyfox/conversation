@@ -10,6 +10,7 @@
 //= require_tree ./angular/states
 //= require_tree ./angular/directives
 //= require_tree ./angular/filters
+//= require_tree ./angular/factories
 //= require_tree ./angular/resources
 //= require_tree ./angular/config
 

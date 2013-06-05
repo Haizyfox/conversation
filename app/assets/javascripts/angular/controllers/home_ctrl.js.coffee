@@ -1,32 +1,26 @@
 'use strict'
 
 angular.module('convoApp').controller('HomeController', [ \
-  '$scope', \
-    ($scope) ->
-      $scope.someone = []
+  '$scope', 'Participant', 'Message',\
+    ($scope, Participant, Message) ->
 
-      adj = [
-        'Sad',
-        'Happy',
-        'Confused',
-        'Cranky',
-        'Snobby'
-      ]
+      $scope.participant = Participant
+      $scope.participants = [new Participant(), new Participant()]
 
-      noun = [
-        'Walrus',
-        'Parakeet',
-        'Goblin',
-        'Gnu',
-        'Otter'
-      ]
+      $scope.$watch 'participants[0].isMe', (isMe) ->
+        if isMe
+          $scope.participants[0].name = 'Me' 
+        else 
+          $scope.participants[0].name = new Participant().name 
 
-      $scope.randomName = ->
-        dice = Math.floor(Math.random() * 4)
-        first = adj[dice]
-        dice = Math.floor(Math.random() * 4)
-        second = noun[dice]
-        first + ' ' + second
+      $scope.newMessage = new Message()
+      $scope.newMessage.poster = $scope.participants[0]
 
+      $scope.messages = []
+
+      $scope.postMessage = ->
+        $scope.messages.push($scope.newMessage)
+        $scope.newMessage = new Message()
+        $scope.newMessage.poster = $scope.participants[0]
       
 ])

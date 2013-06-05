@@ -3,43 +3,48 @@
     .row-fluid
       %h1
         This was a conversation between 
-        %span.counter(counter max="5" min="2")
+        %span.counter(counter="participants" increment="participant" max="5" min="2")
         people
     .row-fluid
       %h1
         I 
-        %span.toggle(toggle on="was" off="wasn't")
+        %span.toggle(toggle="participants[0].isMe" on="was" off="wasn't")
         one of them
 .row-fluid
   .span12.card
     .row-fluid
       %h1 Let me tell you what went down between...
-    .row-fluid(ng-hide="meIncluded")
       %table
-        %tr(ng-repeat="n in [] | range:participants")
+        %tr(ng-repeat="p in participants")
           %td 
-            %img(src="http://avatars.io/twitter/{{someone[index]}}")
-          %td Someone
+            %img(src="http://avatars.io/twitter/{{p.twitter}}")
+          %td(ng-show="p.isMe") Me
+          %td(ng-hide="p.isMe")
+            %input.input-medium(type="text" ng-model="p.name" placeholder="Name")
           %td 
-            %input(ng-model="someone[index]" placeholder="@twitter")
-    .row-fluid(ng-show="meIncluded")
-      %table
-        %tr
-          %td
-            %img(src="http://avatars.io/twitter/{{me}}")
-          %td Me
-          %td
-            %input(ng-model="me" placeholder="@twitter")
-            and
-        %tr(ng-repeat="n in [] | range:(participants-1)")
-          %td 
-            %img(src="http://avatars.io/twitter/{{someone[index]}}")
-          %td Someone
-          %td 
-            %input(ng-model="someone[index]" placeholder="@twitter")
+            %input.input-medium(type="text" ng-model="p.twitter" placeholder="@twitter")
 .row-fluid
   .span12.card
     .row-fluid
       %h1 It went a little something like this...
     .row-fluid
-      \....
+      %form.form-vertical
+        .control-group
+          %label.control-label
+            New message from:
+          .controls
+            %select(ng-model="newMessage.poster" ng-options="p.name for (k, p) in participants")
+        .control-group
+          .controls
+            %textarea(rows="3" placeholder="What did {{newMessage.poster.name}} say?" ng-model="newMessage.content")
+        .control-group
+          .controls
+            %button.btn.btn-primary(ng-click="postMessage()")
+              Post
+      %hr
+      %table
+        %tr(ng-repeat="m in messages")
+          %td
+            %strong {{m.poster.name}}:
+          %td
+            {{m.content}}
