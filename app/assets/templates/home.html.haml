@@ -1,50 +1,74 @@
-.row-fluid
-  .span12.card
-    .row-fluid
-      %h1
-        This was a conversation between 
-        %span.counter(counter="participants" increment="participant" max="5" min="2")
-        people
-    .row-fluid
-      %h1
-        I 
-        %span.toggle(toggle="participants[0].isMe" on="was" off="wasn't")
-        one of them
-.row-fluid
-  .span12.card
-    .row-fluid
-      %h1 Let me tell you what went down between...
-      %table
-        %tr(ng-repeat="p in participants")
-          %td 
-            %img(src="http://avatars.io/twitter/{{p.twitter}}")
-          %td(ng-show="p.isMe") Me
-          %td(ng-hide="p.isMe")
-            %input.input-medium(type="text" ng-model="p.name" placeholder="Name")
-          %td 
-            %input.input-medium(type="text" ng-model="p.twitter" placeholder="@twitter")
-.row-fluid
-  .span12.card
-    .row-fluid
-      %h1 It went a little something like this...
-    .row-fluid
-      %form.form-vertical
-        .control-group
-          %label.control-label
-            New message from:
-          .controls
-            %select(ng-model="newMessage.poster" ng-options="p.name for (k, p) in participants")
-        .control-group
-          .controls
-            %textarea(rows="3" placeholder="What did {{newMessage.poster.name}} say?" ng-model="newMessage.content")
-        .control-group
-          .controls
-            %button.btn.btn-primary(ng-click="postMessage()")
-              Post
-      %hr
-      %table
-        %tr(ng-repeat="m in messages")
-          %td
-            %strong {{m.poster.name}}:
-          %td
-            {{m.content}}
+.hero.home-page-hero
+  .row
+    .small-12.columns.center-contents
+      %h1.white Life is a conversation.
+      %h4.white.subheader Share yours
+      .call-to-action
+        %a.button-light(href="#") Get Started
+        %span.or or
+        %a.button-dark(href="#") Learn More
+.content
+  .row
+    .small-12.columns
+      %h2.subheader Look who's talking...
+  .row
+    .large-3.columns
+      .panel.convobox Existing convo
+    .large-3.columns
+      .panel.convobox Existing convo
+    .large-3.columns
+      .panel.convobox Existing convo
+    .large-3.columns
+      .panel.convobox Existing convo
+
+
+-# .row-fluid
+-#   .span12.card
+-#     .row-fluid
+-#       %h1
+-#         This was a conversation between 
+-#         %span.counter(counter="participants" increment="participant" max="5" min="2")
+-#         people
+-#     .row-fluid
+-#       %h1
+-#         I 
+-#         %span.toggle(toggle="participants[0].isMe" on="was" off="wasn't")
+-#         one of them
+-# .row-fluid
+-#   .span12.card
+-#     .row-fluid
+-#       %h1 Let me tell you what went down between...
+-#       %table
+-#         %tr(ng-repeat="p in participants")
+-#           %td 
+-#             %img(src="http://avatars.io/twitter/{{p.twitter}}")
+-#           %td(ng-show="p.isMe") Me
+-#           %td(ng-hide="p.isMe")
+-#             %input.input-medium(type="text" ng-model="p.name" placeholder="Name")
+-#           %td 
+-#             %input.input-medium(type="text" ng-model="p.twitter" placeholder="@twitter")
+-# .row-fluid
+-#   .span12.card
+-#     .row-fluid
+-#       %h1 It went a little something like this...
+-#     .row-fluid
+-#       %form.form-vertical
+-#         .control-group
+-#           %label.control-label
+-#             New message from:
+-#           .controls
+-#             %select(ng-model="newMessage.poster" ng-options="p.name for (k, p) in participants")
+-#         .control-group
+-#           .controls
+-#             %textarea(rows="3" placeholder="What did {{newMessage.poster.name}} say?" ng-model="newMessage.content")
+-#         .control-group
+-#           .controls
+-#             %button.btn.btn-primary(ng-click="postMessage()")
+-#               Post
+-#       %hr
+-#       %table
+-#         %tr(ng-repeat="m in messages")
+-#           %td
+-#             %strong {{m.poster.name}}:
+-#           %td
+-#             {{m.content}}

@@ -1,26 +1,29 @@
 !!! 5
 %html(ng-app="convoApp")
   %head
-    %title MemeVine
+    %title Conversat.io
+    = javascript_include_tag "vendor/custom.modernizr"
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
+    = tag :meta, name: "viewport", content: "width=device-width, initial-scale=1.0"
     = csrf_meta_tags
 %body
-  .container-fluid
-    .row-fluid
-      .span12
-        .navbar.navbar-inverse.navbar-fixed-top
-          .navbar-inner
-            .container
-              %ul.nav
-                %li
-                  %a(href="/")
-                    Conversati.on
-                %li
-                  %a(href="/")
-                    Create
-              %ul.nav.pull-right
-                %li
-                  %a(href="/")
-                    About
-  = yield
+  %nav.top-bar
+    %ul.title-area
+      %li.name
+        %h1
+          %a(href="#")
+            Conversat.io
+      %li.toggle-topbar.menu-icon
+        %a(href="#")
+          %span
+
+    %section.top-bar-section
+      %ul.left
+        %li
+          %a(href="/")
+            Home
+        %li
+          %a(href="/")
+            New
+  =yield

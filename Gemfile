@@ -40,25 +40,20 @@ gem 'angularjs-rails-resource'
 
 group :assets do
 
-  #Adapter for the Compass Stylesheet Authoring Framework
-  gem 'compass-rails'
-
   # Make HAML available to asset pipeline
   gem 'haml_assets'
 
   # Sass adapter for the Rails asset pipeline.
   gem 'sass-rails',   '~> 3.2.3'
 
+  # Foundation CSS framework
+  gem 'zurb-foundation'
+
   # CoffeeScript adapter for the Rails asset pipeline.
   gem 'coffee-rails', '~> 3.2.1'
 
   # Ruby wrapper for UglifyJS JavaScript compressor
   gem 'uglifier', '>= 1.0.3'
-
-  # SASS version of Twitter bootstrap.
-  gem 'bootstrap-sass', '~> 2.1.1.0'
-
-  gem "flat-ui-rails"
 
   # underscore.js for the Rails asset pipeline
   gem 'underscore-rails'

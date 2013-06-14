@@ -1,0 +1,32 @@
+.hero
+  .row
+    .small-12.columns.center-things
+      %h1.white So then I said...
+      %h4.white.subheader Create a new conversation
+.thing
+  .row
+    .small-12.columns
+      %h2.subheader Who was involved in this conversation?
+  .row
+    .small-12.columns
+      %ul.small-block-grid-2.large-block-grid-4.participants(equal-height-cols)
+        %li(ng-repeat="p in participants")
+          .panel.participant.center-things
+            %img.avatar(src="http://avatars.io/twitter/{{p.twitter}}")
+            %input.input-medium(type="text" ng-model="p.name" placeholder="Name")
+            %input.input-medium(type="text" ng-model="p.twitter" placeholder="@twitter")
+        %li
+          .panel.add-participant.center-things(ng-click="addParticipant()" ng-hide="participantsMaxedOut")
+            +
+.thing
+  .row
+    .small-12.columns
+      %h2.subheader What did they say?
+  .row.panel
+    %form.custom.new-message
+      .row.collapse
+        .small-3.columns
+          %div(zurb-select options="participants" callback="setPoster" model="newMessage.poster.name")
+        .small-9.columns
+          %input(type="text" placeholder="What did they say?")
+        
